@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{% block title %}
+Browse a Channel
+{% endblock %}
+
+
+{%block body%}
+<div class="container">
+    <form class="form">
+        <div class="mt-3 row ">
+            <div class="col">
+                <input class="form-control form-control-lg form-control-borderless" name="searchquery" type="search" placeholder="Search Channel">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-lg btn-success" name="search" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+
+    <table class="table table-bordered mt-5">
+        <thead>
+            <td>SN</td>
+            <td>Img</td>
+            <td>Channel</td>
+            <td>Videos Uploaded</td>
+            <td>Views</td>
+            <td>Subscribers</td>
+            <td>Joined</td>
+        </thead>
+        {% for i in channels %}
+        <tbody>
+            <td>{{i.title}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.channel_id}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{%endblock%}
